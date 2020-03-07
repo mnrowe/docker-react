@@ -6,7 +6,7 @@ before_install:
   - docker build -t mnrowe/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run mnrowe/docker-react npm run test -- --coverage
+  - docker run -e CI=true mnrowe/docker-react npm run test
 
 deploy:
   provider: elasticbeanstalk
